@@ -6,17 +6,14 @@ require_relative 'DataIp'
 class Fregoo
   attr_accessor :hash
 
-  def initialize(url)
-    go_url(url)
+  def initialize
   end
 
-
+  def get(url)
+    open('http://freegeoip.net/json/' + url)
+  end
 
   private
-  def go_url(url)
-     open('http://freegeoip.net/json/' + url)
-  end
-
   def open(url)
     url = Net::HTTP.get(URI.parse(url))
     parse_url url
@@ -28,8 +25,9 @@ class Fregoo
 
 end
 
-fregoo = Fregoo.new('www.github.com')
-obj = DataIp.new(fregoo.hash)
+fregoo = Fregoo.new()
+hash = fregoo.get('www.github.com')
+obj = DataIp.new(hash)
 p obj.ip
 p obj.longitude
 p obj.time_zone
