@@ -1,9 +1,11 @@
-class DataIp
 
-  attr_accessor :ip,:country_code,:country_name, :region_code,:region_name, :city,:zip_code, :time_zone,:latitude,:longitude,:metro_code
+class RequestObject
+
+  attr_accessor :ip,:country_code,:country_name,
+    :region_code,:region_name, :city,:zip_code,
+    :time_zone,:latitude,:longitude,:metro_code
 
   def initialize(hash)
-    p hash
     @ip = hash["ip"]
     @country_name = hash["country_name"]
     @country_code = hash["country_code"]
@@ -17,8 +19,7 @@ class DataIp
     @metro_code = hash["metro_code"]
 
   end
-
-
 end
+
 
 
