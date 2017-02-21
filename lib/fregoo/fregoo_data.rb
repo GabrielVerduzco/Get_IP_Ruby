@@ -1,6 +1,6 @@
 
 module Fregoo
-  class RequestObject
+  class FregooData
 
     attr_accessor :ip,:country_code,:country_name,
       :region_code,:region_name, :city,:zip_code,

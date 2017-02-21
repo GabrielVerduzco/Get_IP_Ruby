@@ -12,5 +12,6 @@ when "get"
   p response
 
  else
-  puts "Unknown command, usage: freegeoip get [IP|DOMAIN]"
+  puts "Please review your command, and use get"
 end
+
