@@ -1,16 +1,9 @@
 require 'net/http'
 require 'uri'
 require 'json'
-require_relative 'fregoo_data'
 
 
 module Fregoo
-
-  def self.get(remote)
-    fregoo = Request.new(remote)
-    RequestObject.new(fregoo.hash)
-  end
-
 
     class Request
       attr_accessor :hash

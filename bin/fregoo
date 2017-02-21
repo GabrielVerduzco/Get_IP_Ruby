@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+
+require "fregoo"
+
+
+case ARGV[0]
+when "get"
+  remote = ARGV[1]
+
+
+  response = Fregoo.get(remote)
+  p response
+
+ else
+  puts "Unknown command, usage: freegeoip get [IP|DOMAIN]"
+end
